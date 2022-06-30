@@ -20,7 +20,14 @@ class MyDocument extends Document {
 	render() {
 		return (
 			<Html lang="en">
-				<Head>{CssBaseline.flush()}</Head>
+				<Head>
+					<meta property="og:image" content="/banner.png" />
+					<meta
+						property="og:title"
+						content="Diego Espinosa | Frontend Developer"
+					/>
+					{CssBaseline.flush()}
+				</Head>
 				<body>
 					<Main />
 					<NextScript />
