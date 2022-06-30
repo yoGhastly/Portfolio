@@ -4,16 +4,12 @@ import { Link as NextLink } from '@nextui-org/react';
 import { Switch, useTheme } from '@nextui-org/react';
 import { useTheme as useNextTheme } from 'next-themes';
 import styles from './navbar.module.css';
+import { links } from '../utils/links';
 
 export const Navbar = () => {
 	const [isNavOpen, setIsNavOpen] = useState(false);
 	const { isDark } = useTheme();
 	const { setTheme } = useNextTheme();
-	const links = [
-		{ href: '/', label: 'Home' },
-		{ href: '/dashboard', label: 'Dashboard' },
-		{ href: '/snippets', label: 'Snippets' },
-	];
 
 	return (
 		<div className="flex flex-col justify-center px-8">

@@ -1,13 +1,13 @@
 import { Card as NextCard, Grid, Text, Link } from '@nextui-org/react';
 
-interface CardProps {
+export interface CardProps {
 	label: string;
 	title: string;
 	desc: string;
 }
 
 export const Card: React.FC<CardProps> = ({ label, title, desc }) => (
-	<NextCard css={{ p: '$6', mw: '400px' }} isHoverable isPressable>
+	<NextCard css={{ p: '$6', mw: '400px' }} isHoverable>
 		<NextCard.Header>
 			<img
 				alt="nextui logo"
@@ -35,6 +35,7 @@ export const Card: React.FC<CardProps> = ({ label, title, desc }) => (
 				color="secondary"
 				target="_blank"
 				href="https://github.com/nextui-org/nextui"
+				className="max-w-xs"
 			>
 				Visit source code on GitHub.
 			</Link>

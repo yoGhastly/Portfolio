@@ -26,6 +26,17 @@ class MyDocument extends Document {
 						property="og:title"
 						content="Diego Espinosa | Frontend Developer"
 					/>
+					<meta content="Frontend Developer" name="description" />
+					<meta property="og:description" content="Frontend Developer" />
+					<meta property="og:type" content="website" />
+					<meta property="og:site_name" content="Diego Espinosa" />
+					<meta property="og:url" content="https://diegoes.vercel.app" />
+					<meta property="twitter:card" content="summary_large_image" />
+					<meta property="twitter:site" content="@diego03825" />
+					<meta
+						property="twitter:title"
+						content="Diego Espinosa | Frontend Developer"
+					/>
 					{CssBaseline.flush()}
 				</Head>
 				<body>

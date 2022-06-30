@@ -1,13 +1,12 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
-import { Card } from '../components/Card';
-import { Hero } from '../components/Hero';
-import { Layout } from '../components/Layout';
-import { Navbar } from '../components/Navbar';
+import { Hero, Layout, Navbar, SelectedProjects } from '../components';
+import { Footer } from '../components/Footer';
+import { projects } from '../utils/projects';
 
 const Home: NextPage = () => {
 	return (
-		<>
+		<main className="flex flex-col justify-center px-8">
 			<Layout title="Diego Espinosa - Developer">
 				<Navbar />
 				<Hero>
@@ -33,19 +32,11 @@ const Home: NextPage = () => {
 							/>
 						</div>
 					</div>
-					<h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-6">
-						Selected projects
-					</h3>
-					<div className="flex gap-6 flex-col md:flex-row">
-						<Card
-							label="yoGhastly/NFTu"
-							title="NFTu"
-							desc="A web platfrom to find your digital unique rarity"
-						/>
-					</div>
+					<SelectedProjects projects={projects} />
 				</Hero>
+				<Footer />
 			</Layout>
-		</>
+		</main>
 	);
 };
 
