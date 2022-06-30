@@ -1,9 +1,9 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
-import { Card } from './components/Card';
-import { Hero } from './components/Hero';
-import { Layout } from './components/Layout';
-import { Navbar } from './components/Navbar';
+import { Card } from '../components/Card';
+import { Hero } from '../components/Hero';
+import { Layout } from '../components/Layout';
+import { Navbar } from '../components/Navbar';
 
 const Home: NextPage = () => {
 	return (
@@ -23,7 +23,7 @@ const Home: NextPage = () => {
 								experience.
 							</p>
 						</div>
-<div className="w-[80px] sm:w-[176px] relative mb-8 sm:mb-0 mr-auto">
+						<div className="w-[80px] sm:w-[176px] relative mb-8 sm:mb-0 mr-auto">
 							<Image
 								src="/profile.jpg"
 								width={176}
@@ -32,7 +32,6 @@ const Home: NextPage = () => {
 								className="rounded-full filter"
 							/>
 						</div>
-
 					</div>
 					<h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-6">
 						Selected projects
@@ -43,7 +42,7 @@ const Home: NextPage = () => {
 							title="NFTu"
 							desc="A web platfrom to find your digital unique rarity"
 						/>
-											</div>
+					</div>
 				</Hero>
 			</Layout>
 		</>
