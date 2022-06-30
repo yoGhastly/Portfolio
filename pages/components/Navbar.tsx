@@ -1,12 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
-import { Link as NextLink, Spacer } from '@nextui-org/react';
-import { useTheme as useNextTheme } from 'next-themes';
+import { Link as NextLink } from '@nextui-org/react';
 import { Switch, useTheme } from '@nextui-org/react';
+import { useTheme as useNextTheme } from 'next-themes';
 
 export const Navbar = () => {
-	const { setTheme } = useNextTheme();
 	const { isDark } = useTheme();
+	const { setTheme } = useNextTheme();
 	const links = [
 		{ href: '/', label: 'Home' },
 		{ href: '/dashboard', label: 'Dashboard' },
@@ -15,7 +15,7 @@ export const Navbar = () => {
 
 	return (
 		<div className="flex flex-col justify-center px-8">
-			<nav className="flex items-center justify-between w-full relative max-w-2xl mx-auto pt-8 pb-8 sm:pb-16 dark:text-gray-900 bg-opacity-60 ">
+			<nav className="flex items-center justify-between w-full relative max-w-2xl mx-auto pt-8 pb-8 sm:pb-16 bg-opacity-60 ">
 				<div className="ml-[-0.60rem]">
 					{links.map(({ href, label }) => (
 						<Link href={href} key={href}>
