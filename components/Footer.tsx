@@ -39,12 +39,14 @@ export const Footer = () => {
 
 				<div className="flex flex-col space-y-4">
 					{socialLinks.map(({ href, label }) => (
-						<Link href={href} key={href}>
-							<NextLink color="text" className="transition-all">
-								{' '}
-								{label}{' '}
-							</NextLink>
-						</Link>
+						<NextLink
+							color="text"
+							className="transition-all"
+							href={href}
+							key={href}
+						>
+							{label}
+						</NextLink>
 					))}
 				</div>
 			</div>

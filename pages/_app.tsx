@@ -2,6 +2,7 @@ import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import { NextUIProvider, createTheme } from '@nextui-org/react';
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
+import { Navbar, Hero, Footer } from '../components';
 
 const lightTheme = createTheme({
 	type: 'light',
@@ -38,7 +39,11 @@ function MyApp({ Component, pageProps }: AppProps) {
 			}}
 		>
 			<NextUIProvider>
-				<Component {...pageProps} />
+				<Navbar />
+				<main className="flex flex-col justify-center px-8">
+					<Component {...pageProps} />
+					<Footer />
+				</main>
 			</NextUIProvider>
 		</NextThemesProvider>
 	);

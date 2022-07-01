@@ -15,16 +15,15 @@ export const SelectedProjects: React.FC<Props> = ({ projects }) => {
 				Selected projects
 			</h3>
 			<div className="flex gap-6 flex-col md:flex-row">
-				{projects.map(({ label, title, desc }) => (
+				{projects.map(({ label, title, desc, url }) => (
 					<Grid.Container gap={4} key={label} justify="center">
-						<Card label={label} title={title} desc={desc} />
+						<Card label={label} title={title} desc={desc} url={url} />
 					</Grid.Container>
 				))}
 			</div>
 			<Link
 				href="https://github.com/yoGhastly"
 				color="text"
-				block
 				className="flex justify-center items-center mt-8 leading-7 rounded-lg  transition-all h-6"
 			>
 				See all projects

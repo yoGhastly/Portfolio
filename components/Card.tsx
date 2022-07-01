@@ -4,9 +4,10 @@ export interface CardProps {
 	label: string;
 	title: string;
 	desc: string;
+	url: string;
 }
 
-export const Card: React.FC<CardProps> = ({ label, title, desc }) => (
+export const Card: React.FC<CardProps> = ({ label, title, desc, url }) => (
 	<NextCard css={{ p: '$6', mw: '400px' }} isHoverable>
 		<NextCard.Header>
 			<img
@@ -34,7 +35,7 @@ export const Card: React.FC<CardProps> = ({ label, title, desc }) => (
 				icon
 				color="secondary"
 				target="_blank"
-				href="https://github.com/nextui-org/nextui"
+				href={url}
 				className="max-w-xs"
 			>
 				Visit source code on GitHub.
