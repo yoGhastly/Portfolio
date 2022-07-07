@@ -1,6 +1,4 @@
-import { Song } from '../lib/types/types';
-
-export const Track = (track: Song) => {
+export const Track = (track: any) => {
 	return (
 		<div className="flex flex-row items-baseline border-b border-gray-400  max-w-3xl w-full mt-8">
 			<p className="text-sm font-bold">{track.ranking}</p>
