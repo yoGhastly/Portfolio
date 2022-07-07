@@ -1,7 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
+import useSWR, { BareFetcher } from 'swr';
 import { Link as NextLink } from '@nextui-org/react';
 import { links, socialLinks } from '../utils/links';
+import { Data } from '../interfaces';
+import { fetcher } from '../utils/fetcher';
 
 const SVG = () => {
 	return (
@@ -15,15 +18,39 @@ const SVG = () => {
 };
 
 export const Footer = () => {
+	const { data, error } = useSWR<Data>(
+		'api/spotify',
+		fetcher as BareFetcher<Data>
+	);
+	if (error) {
+		return <div>failed to load</div>;
+	}
+	if (!data) {
+		return <div>loading...</div>;
+	}
+
 	return (
 		<footer className="flex flex-col justify-center items-start max-w-2xl mx-auto w-full mb-8 mt-8">
 			<hr className="w-full h-1 border-1 border-gray-800 mb-8" />
 			<div className="flex flex-row-reverse items-center sm:flex-row mb-8 space-x-0 sm:space-x-2 w-full">
 				<SVG />
 				<div className="inline-flex flex-col sm:flex-row w-full max-w-full truncate">
-					<p className="capsize font-medium">Not playing</p>
-					<span className="capsize mx-2  hidden sm:block">-</span>
-					<p className="capsize  max-w-max truncate">Spotify</p>
+					{data?.songUrl ? (
+						<a
+							className="capsize  font-medium  max-w-max truncate"
+							href={data.songUrl}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							{data.title}
+						</a>
+					) : (
+						<p className="capsize font-medium">Not Playing</p>
+					)}
+					<span className="capsize mx-2 hidden sm:block">{' – '}</span>
+					<p className="capsize max-w-max truncate">
+						{data?.artist ?? 'Spotify'}
+					</p>
 				</div>
 			</div>
 			<div className="w-full max-w-2xl grid grid-cols-1 gap-4 pb-16 sm:grid-cols-3">

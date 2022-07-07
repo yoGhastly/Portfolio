@@ -1,6 +1,6 @@
 import React from 'react';
 import type { NextPage } from 'next';
-import { Hero, Layout } from '../components';
+import { Hero, Layout, Tracks } from '../components';
 import { Text } from '@nextui-org/react';
 
 const dashboard: NextPage = () => {
@@ -23,6 +23,7 @@ const dashboard: NextPage = () => {
 							Curious what I'm currently jamming to? Here's my top tracks on
 							Spotify updated daily.
 						</Text>
+						<Tracks />
 					</div>
 				</div>
 			</Hero>
